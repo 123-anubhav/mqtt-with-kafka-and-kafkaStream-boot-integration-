@@ -1,0 +1,17 @@
+mqtt:
+  broker: tcp://localhost:1883
+  clientId: vts-mqtt-client
+  username: yourUser
+  password: yourPass
+  topic: vehicle/+/location
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    streams:
+      application-id: vts-stream-app
+      default-key-serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+      default-value-serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
